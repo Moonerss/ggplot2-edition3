@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>References | ggplot2:数据分析与图形艺术</title>
+  <meta name="description" content="《ggplot2:数据分析与图形艺术》中文译版" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="References | ggplot2:数据分析与图形艺术" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="《ggplot2:数据分析与图形艺术》中文译版" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="References | ggplot2:数据分析与图形艺术" />
+  
+  <meta name="twitter:description" content="《ggplot2:数据分析与图形艺术》中文译版" />
+  
+
+<meta name="author" content="Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen, Jeason Zhao(译)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="final-words.html"/>
+
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>译者的话</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#欢迎"><i class="fa fa-check"></i>欢迎</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> Literature</a></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
+<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a>
+<ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#第二版前言"><i class="fa fa-check"></i>第二版前言</a>
+<ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#重大改变"><i class="fa fa-check"></i>重大改变</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#展望"><i class="fa fa-check"></i>展望</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#致谢"><i class="fa fa-check"></i>致谢</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#preface-3e"><i class="fa fa-check"></i>第三版前言</a>
+<ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#主要变化"><i class="fa fa-check"></i>主要变化</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#致谢-1"><i class="fa fa-check"></i>致谢</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ggplot2:数据分析与图形艺术</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+
+<div id="第二版前言" class="section level2 unnumbered">
+<h2>第二版前言</h2>
+<p>欢迎阅读第二版的《ggplot2:数据分析与图形艺术》。我很高兴能有这样一本书，展示ggplot2最新和最强大的功能，以及过去五年在R和ggplot2社区中发生的伟大事情。ggplot2社区充满活力：ggplot2的邮件列表有7,000多个成员，并且有一个非常活跃的Stack Overflow社区，其中有将近10,000个用ggplot2标记的问题。尽管我的大部分开发工作都不再花在ggplot2上了（以下更多内容），但再没有比这更好的时间来学习和使用它了。</p>
+<p>我非常感谢ggplot2的成功。它是最常下载的R软件包之一（去年下载量超过一百万！），并影响了其他语言的图形软件包的设计。就我个人而言，ggplot2为我提供了许多激动人心机会让我环游世界，认识有趣的人。我喜欢听到人们如何使用R和ggplot2来理解他们关心的数据。</p>
+<p>非常感谢Carson Sievert，他帮助我实现了代码的现代化，包括将源代码转换为R Markdown。 他还更新了许多示例，并帮助我对本书进行了校对。</p>
+<div id="重大改变" class="section level3 unnumbered">
+<h3>重大改变</h3>
+<p>我已经花了很多心血以确保此版本是对第一个版本的真正升级。除了更新代码以确保与最新版本的ggplot2完全兼容外，我还进行了以下升级：</p>
+<ul>
+<li><p>本书中显示了更多代码，因此它更容易用作参考。总体而言，这本书更具“编织”感：浮动图形和表格更少，内联代码更多。 这使布局不太美观，但使相关项目更加紧密的联系在一起。</p></li>
+<li><p>在github上发布了完整的源代码：<a href="https://github.com/hadley/ggplot2-book" class="uri">https://github.com/hadley/ggplot2-book</a></p></li>
+<li><p>在介绍中将<code>qplot()</code>转换为<code>ggplot()</code>。反馈表明<code>qplot()</code>更像是是一把拐杖：它使简单的绘图变得更容易，但对掌握语法没有帮助。</p></li>
+<li><p>在整本书中增加了练习训练，因此您可以在学习新技能后立即进行练习。</p></li>
+<li><p>添加了指向围绕ggplot2构建的软件包丰富生态系统的链接。现在，您会看到本书中突出显示了许多其他软件包，并获得了指向我认为特别有用的其他软件包的网络链接。</p></li>
+<li><p>全面修订了<em>Toolbox</em>一章，以涵盖所有新的图层。我添加了一个全新的部分，因为它很重要，并且在其他地方都没有被详细介绍。映射部分已进行了相当大的扩展，以更多地讨论不同类型的数据以及如何获取他们。</p></li>
+<li><p>完全重写了<em>sacles</em>一章，将重点放在最重要的任务上。它还讨论了如何更好地控制图例外观的新功能，并展示了添加到ggplot2中的一些标度。</p></li>
+<li><p>将数据分析章节分为三部分：数据整理（使用tidyr），数据处理（使用dplyr）和模型可视化（使用broom）。 我讨论了我的数据处理工具的最新版本，并介绍了David Robinson出色的broom软件包。</p></li>
+</ul>
+<p>本书伴随发布的ggplot2新版本：2.0.0。这包括一些小的调整和改进，以及对文档的相当大的改进。经过相当长的停顿后再回到ggplot2开发，这帮助我看到了许多以前没有引起注意的问题。 ggplot2 2.0.0包含一个官方扩展机制，以便其他人可以在其自己的程序包中提供新的ggplot2组件。这在新的小插图<code>vignette("extending-ggplot2")</code>中进行了说明。</p>
+</div>
+<div id="展望" class="section level3 unnumbered">
+<h3>展望</h3>
+<p>ggplot2现在很稳定，并且将来不太可能发生很大变化。将来会修复一些错误，并且可能也会产生新的问题，但是ggplot2的工作方式不会有太大变化。ggplot2的下一个迭代产品是ggvis。ggvis更加雄心勃勃，它旨在提供交互式图形语法。 ggvis仍然很年轻，并且缺少ggplot2的许多功能（最需要提醒的是它目前缺乏分面功能，并且无法绘制静态图形），但是在未来几年中，我们的目标是使ggvis优于ggplot2。</p>
+<p>ggvis的语法与ggplot2略有不同。您将无法将ggplot2图转换为ggvis，但我们认为这样是值得的：新语法会更加一致，并且对新手来说更容易学习。如果您精通ggplot2，就会发现在语法上挣扎一段时间后可以非常好的切换到ggvis上，并且开始变得很自然。 掌握ggplot2时，您学习的重要技能不是在代码中描述绘图的编程细节，而是思考如何将数据转换为有效的可视化内容。</p>
+</div>
+<div id="致谢" class="section level3 unnumbered">
+<h3>致谢</h3>
+<p>许多人通过高层次的结构框架梳理，拼写和语法更正以及错误报告为本书做出了贡献。我要特别感谢William E. J. Doane，Alexander Forrence，Devin Pastoor，David Robinson和Guangchuang Yu对这本书的详细技术评论。</p>
+<p>在ggplot2的生命中（现在已经相当长了）还有其他人做出了许多的贡献。我要感谢：Leland Wilkinson为巩固我对于图形语法的理解而进行的讨论和评论；Gabor Grothendieck提供了早期有用的评论；Heike Hofmann和Di Cook在我的博士期间担任顾问并支持ggplot2的开发；Charlotte Wickham、ISU的 stat480和stat503，在很早期就进行了尝试；Debby Swayne提供了大量有用的反馈和建议；Bob Muenchen、Reinhold Kliegl、Philipp Pagel、Richard Stahlhut、Baptiste Auguie、Jean-Olivier Irisson、Thierry Onkelinx以及其他许多阅读本书草稿并给我反馈的人；最重要的是R-help和ggplot2邮件列表的成员，它们提供了许多有趣且富挑战性的图形问题，这些问题都促使了本书的发展。</p>
+
+<p class="flushright">
+Hadley Wickham<br />
+September 2015
+</p>
+
+</div>
+</div>
+<div id="preface-3e" class="section level2 unnumbered">
+<h2>第三版前言</h2>
+<p>欢迎阅读第三版的《ggplot2:数据分析与图形艺术》。我很高兴能针对ggplot2在过去五年中发生的所有变化更新该书的新版本。我也很高兴终于有了这本书的在线版本，<a href="http://ggplot2-book.org/" class="uri">http://ggplot2-book.org/</a>，这要归功于与Springer出版社的重新洽谈。</p>
+<p>自该书的上一版以来，ggplot2本身的主要变化是来自社区贡献者。尽管我目前仍领导该项目并继续关注数据可视化，但我不再参与该程序包的日常开发。在撰写本文时，ggplot2的核心开发人员是：</p>
+<ul>
+<li><a href="https://github.com/wch">Winston Chang</a></li>
+<li><a href="https://github.com/lionel-">Lionel Henry</a></li>
+<li><a href="https://github.com/thomasp85">Thomas Lin Pedersen</a></li>
+<li><a href="https://github.com/kohske">Kohske Takahashi</a></li>
+<li><a href="https://github.com/clauswilke">Claus Wilke</a></li>
+<li><a href="https://github.com/karawoo">Kara Woo</a></li>
+<li><a href="https://github.com/yutannihilation">Hiroaki Yutani</a></li>
+<li><a href="https://github.com/paleolimbot">Dewey Dunnington</a></li>
+</ul>
+<p>您可以在<a href="https://github.com/tidyverse/ggplot2/blob/master/GOVERNANCE.md">ggplot2官方文档</a>中查看最新的成员列表以及如何成为核心开发成员。</p>
+<div id="主要变化" class="section level3 unnumbered">
+<h3>主要变化</h3>
+<ul>
+<li><p>删除了<em>Data Analysis, Data Transformation, and Modelling for Visualisation</em>章节，使本书更加专注于可视化。如果您正在寻找有关在R中进行数据科学的一般建议，那么我建议您阅读<a href="https://r4ds.had.co.nz">R for Data Science</a>。</p></li>
+<li><p><em>Toolbox</em>被添加到第六章，用来练习对图层的使用。其中包括有关地图和注解的更多相关材料，以及一个新的章节讨论如何在一页上排列多个图。</p></li>
+<li><p>相似的，旧的<em>Scales, Axes, and Legend</em>章节被分成四个章节，前三个章节包含了对量表数据的标化和使用指南，最后一个章节关注于理论基础。</p></li>
+<li><p>旧的<em>Positioning</em>一章已分为新的<em>Coordinate Systems</em>和<em>Faceting</em>两章，为这些重要话题提供更多的空间。</p></li>
+<li><p>新的章节详细介绍了ggplot2的内部结构，以及如何在自己的程序包中对其进行扩展。</p></li>
+</ul>
+</div>
+<div id="致谢-1" class="section level3 unnumbered">
+<h3>致谢</h3>
+<p>在书的该版本当中，有两位新合著者：Danielle Navarro和Thomas Lin Pedersen。 Danielle在图层和标化章节中贡献了大多数新的内容，而Thomas在关于拼图（使用他的<code>patchwork</code>包）以及如何扩展ggplot2方面贡献了新的章节。</p>
+<p>本书是公开编写的，并在完成后会在Twitter上刊登各章的广告。这确实是社区的力量：许多人阅读草稿，检阅错字，建议改进，提供内容。没有这些贡献者，这本书的质量将不尽如人意。我非常感谢他们的帮助。</p>
+<pre><code>## Warning in scan(file = file, what = what, sep = sep, quote = quote, dec = dec, :
+## invalid input found on input connection &#39;contributors.csv&#39;</code></pre>
+<p>非常感谢通过GitHub拉取请求做出特定改进的所有12 个人（按用户名的字母顺序）: Alexej Gossmann (@agisga), @chriselrod, Carson Sievert (@cpsievert), Dave Childers (@davechilders), @dicorynia, Dennis Murphy (@djmurphy420), Danielle Navarro (@djnavarro), @dmurdoch, Zhuoer Dong (@dongzhuoer), Dan Yavorsky (@dyavorsky), Francisco Júnior (@fjuniorr), G (@gokceneraslan).</p>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-bookdown" class="csl-entry">
+Xie, Yihui. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>, 2020. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+</div>
+<div id="ref-xie2015" class="csl-entry">
+———. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC, 2015. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="final-words.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ggplot2-edition3.pdf", "ggplot2-edition3.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

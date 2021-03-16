@@ -1,0 +1,14 @@
+book_filename: "ggplot2-edition3"
+delete_merged_file: true
+new_session: true
+language:
+  ui:
+    chapter_name: "Chapter "
+
+rmd_files:
+- "index.Rmd"
+
+- "preface-3e.Rmd"
+- "preface-2e.Rmd"
+
+- "introduction.Rmd"
