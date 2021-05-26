@@ -1,172 +1,93 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>欢迎 | ggplot2:数据分析与图形艺术</title>
+<meta name="author" content="Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen, Jeason Zhao(译)">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7.4/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-142542392-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>欢迎 | ggplot2:数据分析与图形艺术</title>
-  <meta name="description" content="《ggplot2:数据分析与图形艺术》中文译版" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="欢迎 | ggplot2:数据分析与图形艺术" />
-  <meta property="og:type" content="book" />
-  
-  
-  <meta property="og:description" content="《ggplot2:数据分析与图形艺术》中文译版" />
-  
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="欢迎 | ggplot2:数据分析与图形艺术" />
-  
-  <meta name="twitter:description" content="《ggplot2:数据分析与图形艺术》中文译版" />
-  
-
-<meta name="author" content="Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen, Jeason Zhao(译)" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="index.html"/>
-<link rel="next" href="preface-3e.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+      gtag('config', 'UA-142542392-1');
+    </script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>译者的话</a></li>
-<li class="chapter" data-level="" data-path="欢迎.html"><a href="欢迎.html"><i class="fa fa-check"></i>欢迎</a></li>
-<li class="chapter" data-level="" data-path="preface-3e.html"><a href="preface-3e.html"><i class="fa fa-check"></i>第三版前言</a>
-<ul>
-<li class="chapter" data-level="" data-path="preface-3e.html"><a href="preface-3e.html#主要变化"><i class="fa fa-check"></i>主要变化</a></li>
-<li class="chapter" data-level="" data-path="preface-3e.html"><a href="preface-3e.html#致谢"><i class="fa fa-check"></i>致谢</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="第二版前言.html"><a href="第二版前言.html"><i class="fa fa-check"></i>第二版前言</a>
-<ul>
-<li class="chapter" data-level="" data-path="第二版前言.html"><a href="第二版前言.html#重大改变"><i class="fa fa-check"></i>重大改变</a></li>
-<li class="chapter" data-level="" data-path="第二版前言.html"><a href="第二版前言.html#展望"><i class="fa fa-check"></i>展望</a></li>
-<li class="chapter" data-level="" data-path="第二版前言.html"><a href="第二版前言.html#致谢-1"><i class="fa fa-check"></i>致谢</a></li>
-</ul></li>
-<li class="part"><span><b>I 开始</b></span></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">ggplot2:数据分析与图形艺术</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ggplot2:数据分析与图形艺术</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">译者的话</a></li>
+<li><a class="active" href="%E6%AC%A2%E8%BF%8E.html">欢迎</a></li>
+<li><a class="" href="preface-3e.html">第三版前言</a></li>
+<li><a class="" href="%E7%AC%AC%E4%BA%8C%E7%89%88%E5%89%8D%E8%A8%80.html">第二版前言</a></li>
+<li class="book-part">开始</li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/Moonerss/ggplot2-edition3">View book source <i class="fab fa-github"></i></a></p>
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="欢迎" class="section level1 unnumbered">
-<h1>欢迎</h1>
-<p><a href="https://amzn.to/2I1kj05"><img class="cover" src="cover.jpg" alt="Buy 2nd edition" width="200" height="303" /></a><br />
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="欢迎" class="section level1 unnumbered">
+<h1>欢迎<a class="anchor" aria-label="anchor" href="#%E6%AC%A2%E8%BF%8E"><i class="fas fa-link"></i></a>
+</h1>
+<p><a href="https://amzn.to/2I1kj05"><img class="cover" src="cover.jpg" alt="Buy 2nd edition" width="200" height="303"></a><br>
 这是Springer出版的《ggplot2: elegant graphics for data analysis》的第三版的在线编辑版本。 您可以从第二版的<a href="preface-3e.html#preface-3e">前言</a>中了解该版本的变化。</p>
 <p>本书详细介绍了<code>ggplot2</code>的一些基础知识，但主要重点是解释ggplot2使用的图形语法，并对其细节进行完整的描述。 这不是一本<a href="https://r-graphics.org">食谱</a>，也不一定能够帮助您创建所需要的任何图形。但这本书将帮助您进一步理解绘图基础理论的细节，从而使您能够根据自己的需求量身定制出您需要的任何方案。</p>
 <p>这本书的作者：<a href="http://hadley.nz">Hadley Wickham</a>， <a href="https://djnavarro.net">Danielle Navarro</a>， 和 <a href="https://www.data-imaginist.com">Thomas Lin Pedersen</a>。</p>
 
 </div>
-            </section>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html">译者的话</a></div>
+<div class="next"><a href="preface-3e.html">第三版前言</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#%E6%AC%A2%E8%BF%8E">欢迎</a></li></ul>
 
-          </div>
-        </div>
-      </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="preface-3e.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/Moonerss/ggplot2-edition3/blob/master/index.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/Moonerss/ggplot2-edition3/edit/master/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>ggplot2:数据分析与图形艺术</strong>" was written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen, Jeason Zhao(译). It was last built on 更新时间2021-03-16.</p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["ggplot2-edition3.pdf", "ggplot2-edition3.epub"],
-"toc": {
-"collapse": "subsection"
-}
-});
-});
-</script>
 
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
 </body>
-
 </html>

@@ -16,7 +16,7 @@ description: "《ggplot2:数据分析与图形艺术》中文译版"
 这本书是[Hadley Wickham](http://hadley.nz)创作的《ggplot2:Elegant Graphics for Data Analysis》的中文翻译版本。**兴趣使然，勿作他用。**  
 
 
-# 欢迎 {.unnumbered}
+## 欢迎 {.unnumbered}
 
 `r if (knitr::is_latex_output()) '<!--'` 
 

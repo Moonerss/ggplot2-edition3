@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 1 引入 | ggplot2:数据分析与图形艺术</title>
+<meta name="author" content="Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen, Jeason Zhao(译)">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7.4/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-142542392-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-142542392-1');
+    </script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">ggplot2:数据分析与图形艺术</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">译者的话</a></li>
+<li><a class="" href="preface-3e.html">第三版前言</a></li>
+<li><a class="" href="%E7%AC%AC%E4%BA%8C%E7%89%88%E5%89%8D%E8%A8%80.html">第二版前言</a></li>
+<li class="book-part">开始</li>
+<li><a class="active" href="introduction.html"><span class="header-section-number">1</span> 引入</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/Moonerss/ggplot2-edition3">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction" class="section level1" number="1">
+<h1>
+<span class="header-section-number">1</span> 引入<a class="anchor" aria-label="anchor" href="#introduction"><i class="fas fa-link"></i></a>
+</h1>
+<div id="欢迎来到-ggplot2" class="section level2" number="1.1">
+<h2>
+<span class="header-section-number">1.1</span> 欢迎来到 ggplot2<a class="anchor" aria-label="anchor" href="#%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-ggplot2"><i class="fas fa-link"></i></a>
+</h2>
+<p>ggplot2是一个生成统计、数据、图形的R包。与大多数其他绘图包不同，ggplot2具有基于基于图形语法的基础绘图语句<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-wilkinson:2006" role="doc-biblioref"&gt;Leland Wilkinson, &lt;em&gt;The Grammar of Graphics&lt;/em&gt;, 2nd ed., Statistics and Computing (Springer, 2005)&lt;/a&gt;.&lt;/p&gt;'><sup>1</sup></a></span>；这允许您通过组合独立的图形组分来构成图形。这一语法设计使得ggplot2非常强大。您可以创建适合特定问题的新的图形，而不仅是仅限于预先定义的图形模式。虽然必须学习一定的语法感觉会很累，但是ggplot2相当容易学习：它有一套简单的核心法则，并且很少有特殊情况的出现。最难的可能是您需要一点时间忘记使用其他绘图工具带来的所有刻板印象和先入之见。</p>
+<p>ggplot2可以提供漂亮简洁的图形，并且可以对诸如图例等细节进行处理。实际上，通过精心调节默认的设置参数可以使您在几秒钟内制作出具有出版质量的图形。 但是，如果您确实有特殊的格式要求，ggplot2全面的主题系统可以使您轻松完成所需的工作。这意味着您不必浪费时间打磨图形使它看起来更漂亮，而是专注于创建最能揭示数据中信息的图表样式。</p>
+<p>ggplot2被设计为可以逐层迭代的工作方式。从显示原始数据的图层开始。然后添加注释和统计摘要图层。这使得你可以用设计分析时使用的相同的结构化思维来生成图形。拉近了脑海中图形样式与绘制出来的图形之间的距离。这对于那些尚未具有结构化分析方案的学生来说是非常有帮助的。</p>
+<p>学习语法不仅可以帮助你创建熟悉的图形，还可以帮助你创建更新更好的图形。没有语法，就没有根本的理论，所以大多数图形包只是一个特殊情况的大集合。例如，在base R中，如果你设计了一个新图形，它是由线和点等原始情节元素组成的，所以很难设计与现有情节相结合的新组件。在ggplot2中，用于创建新图形的表达式由更高级的元素组成，如原始数据和统计转换的表示，这些元素可以很容易地与新数据集和其他图组合在一起。</p>
+<p>这本书提供了对ggplot2的实际应用介绍，并提供了大量的示例代码和图形。它还解释了ggplot2所基于的语法。与其他正式系统一样，即使您不了解底层模型，ggplot2也很有用。但是，您对它了解得越多，就越能够更有效地使用ggplot2。</p>
+<p>假如你是一个不熟悉语法的新手，这本书将会教你基础的知识，让你可以重新创建你已经熟悉的情节；向你展示如何使用语法创建新的图形;并最终使您成为能够构建新组件来扩展语法的专家。</p>
+</div>
+<div id="什么是图形的语法" class="section level2" number="1.2">
+<h2>
+<span class="header-section-number">1.2</span> 什么是图形的语法？<a class="anchor" aria-label="anchor" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%BD%A2%E7%9A%84%E8%AF%AD%E6%B3%95"><i class="fas fa-link"></i></a>
+</h2>
+<p>Wilkinson创建了图形语法用来描述所有统计图形背后的基本特性。图形的语法是对什么是统计图形这一问题的回答。ggplot2<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-wickham:2007d" role="doc-biblioref"&gt;Hadley Wickham, &lt;span&gt;“A Layered Grammar of Graphics,”&lt;/span&gt; &lt;em&gt;Journal of Computational and Graphical Statistics&lt;/em&gt;, 2009&lt;/a&gt;.&lt;/p&gt;'><sup>2</sup></a></span>搭建在Wilkinson语法的基础之上，将重点放在重要的图层上，并对其进行调整，以便在R中使用。简而言之，语法告诉我们怎样将数据映射到图形的几何对象(点、线、条)和美学属性(颜色、形状、大小)上。图形还可以包括关于该图坐标系统的数据和信息的统计转换。分面可用于数据中不同子集的绘制。这些独立组件的组合构成了一个完整的图形。</p>
+<p>随着本书的进展，将对基本的语法进行详细的说明。第一个描述的部分说明如下。它介绍了将在本书中使用的一些术语，并概述了每个组件的基本功能。不用担心不能理解它们的具体含义：您会有更多的机会了解这些组件以及它们如何协同工作。</p>
+<p>所有图表都由数据(<strong>data</strong>)，您要可视化的信息以及描述数据变量如何映射到美学属性的映射关系(<strong>mapping</strong>)成。一共包含五个映射组件：</p>
+<ul>
+<li><p>图层(<strong>layer</strong>)是几何元素和统计转换的集合。几何元素（简称<strong>geom </strong>）表示您在图中实际看到的内容，包括点，线，多边形等。统计转换(简称<strong>stat</strong>)，是对数据的汇总：例如，对观测数值分类计数创建直方图，或拟合一个线性模型。</p></li>
+<li><p><strong>Scale</strong>将数据空间中的值映射到美学空间中，包括颜色、形状和大小等属性的设置。<code>Scale</code>还会绘制图例和坐标轴，这使得可以从图中还原原始数据(反向映射)。</p></li>
+<li><p>坐标系统(<strong>coord</strong>)描述数据坐标如何映射到图形的平面上。它还提供轴线和网格线来帮助查看图片。我们通常使用笛卡尔坐标系，但也有其他一些方法，包括极坐标和地图投影等。</p></li>
+<li><p>分面(<strong>facet</strong>)指定如何分解数据子集并将其显示为多个小的并列图形。这也被称为条件调节或格子/格架。</p></li>
+<li><p>主题(<strong>theme</strong>)控制更精细的细节显示，如字体的大小、背景的颜色。尽管ggplot2已经谨慎的选取了默认的参数，但是您可能参考其他资料构建有吸引力的图片。一个很好的起点是塔夫特的早期作品<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-tufte:1990" role="doc-biblioref"&gt;Edward R. Tufte, &lt;em&gt;Envisioning Information&lt;/em&gt; (Graphics Press, 1990)&lt;/a&gt;; &lt;a href="introduction.html#ref-tufte:1997" role="doc-biblioref"&gt;Edward R. Tufte, &lt;em&gt;Visual Explanations&lt;/em&gt; (Graphics Press, 1997)&lt;/a&gt;; &lt;a href="introduction.html#ref-tufte:2001" role="doc-biblioref"&gt;Edward R. Tufte, &lt;em&gt;The Visual Display of Quantitative Information&lt;/em&gt;, second (Graphics Press, 2001)&lt;/a&gt;.&lt;/p&gt;'><sup>3</sup></a></span>。</p></li>
+</ul>
+<p>同样地，需要注意一些事情：</p>
+<ul>
+<li><p>它并没有建议使用哪些图形。虽然这本书致力于推动一个合理的情节制作过程，但重点是如何制作你想要的情节，而不是制作哪一个情节。要想获得更多关于选择或创造情节来回答你感兴趣的问题的建议，<a href="mailto:%E4%BD%A0%E5%8F%AF%E4%BB%A5%E5%92%A8%E8%AF%A2@robbins" class="email">你可以咨询@robbins</a>:2004, <span class="citation"><a href="introduction.html#ref-cleveland:1993" role="doc-biblioref">William Cleveland</a>,<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-cleveland:1993" role="doc-biblioref"&gt;&lt;em&gt;Visualizing Data&lt;/em&gt; (Hobart Press, 1993)&lt;/a&gt;.&lt;/p&gt;'><sup>4</sup></a></span> <span class="citation"><a href="introduction.html#ref-chambers:1983" role="doc-biblioref">John Chambers et al.</a><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-chambers:1983" role="doc-biblioref"&gt;&lt;em&gt;Graphical Methods for Data Analysis&lt;/em&gt; (Wadsworth, 1983)&lt;/a&gt;.&lt;/p&gt;'><sup>5</sup></a></span> 和。<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="#ref-tukey:1977%E7%AD%89%E4%BA%BA" role="doc-biblioref"&gt;&lt;strong&gt;Tukey:1977等人?&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;'><sup>6</sup></a></span></p></li>
+<li><p>ggplot2不能绘制交互式图形，只能绘制静态图形。在计算机屏幕上显示ggplot2图与在纸上打印它们本质上没有区别。对于动态和交互式图形，您可以在其他地方寻找(可能是下面描述的<code>ggvis</code>)。<a href="mailto:D@cook" class="email">D@cook</a>:2007为交互式图形包<code>GGobi</code>提供了精彩的介绍。<code>GGobi</code>可以通过<code>rggobi</code>包连接到R<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-wickham:2008b" role="doc-biblioref"&gt;Hadley Wickham et al., &lt;span&gt;“An Introduction to Rggobi,”&lt;/span&gt; &lt;em&gt;R-News&lt;/em&gt; 8, no. 2 (2008): 3–7, &lt;/a&gt;&lt;a href="http://CRAN.R-project.org/doc/Rnews/Rnews_2008-2.pdf" role="doc-biblioref"&gt;http://CRAN.R-project.org/doc/Rnews/Rnews_2008-2.pdf&lt;/a&gt;.&lt;/p&gt;'><sup>7</sup></a></span>。</p></li>
+</ul>
+</div>
+<div id="ggplot2如何适应其他r绘图系统" class="section level2" number="1.3">
+<h2>
+<span class="header-section-number">1.3</span> ggplot2如何适应其他R绘图系统？<a class="anchor" aria-label="anchor" href="#ggplot2%E5%A6%82%E4%BD%95%E9%80%82%E5%BA%94%E5%85%B6%E4%BB%96r%E7%BB%98%E5%9B%BE%E7%B3%BB%E7%BB%9F"><i class="fas fa-link"></i></a>
+</h2>
+<p>在R中提供了许多其他图形系统：base绘图系统，grid绘图系统和lattice绘图系统。 那么ggplot2与它们有何不同？</p>
+<ul>
+<li><p>base绘图系统由Ross Ihaka基于S语言图形驱动程序的经验编写的，<a href="mailto:%E9%83%A8%E5%88%86%E5%8F%82%E8%80%83%E4%BA%86@chambers" class="email">部分参考了@chambers</a>:1983。base绘图系统是纸笔模型:您只能在图片的基础上绘制，不能修改或删除现有内容。除了图形在屏幕上的外观之外，没有其他用户可以访问的信息。base绘图系统包括绘制基本图和整个图的工具。base绘图系统的图形绘制通常速度很快，但作用范围有限。如果您已经创建过单个散点图、直方图或一组箱式图，那么您可能已经使用了base绘图系统。</p></li>
+<li><p>grid绘图系统的开发始于2000年，它是一个更加丰富图形原语(graphical primitives)系统。grid绘图系统是由Paul Murrell在他的博士研究中开发出来的<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-murrell:1998" role="doc-biblioref"&gt;Paul Murrell, &lt;span&gt;“Investigations in Graphical Statistics”&lt;/span&gt; (PhD thesis, The University of Auckland, 1998)&lt;/a&gt;.&lt;/p&gt;'><sup>8</sup></a></span>。Grid grobs(图形对象)可以独立于plot表示并在以后进行修改。viewports系统(每个视图都包含自己的坐标系统)使布局复杂图形变得更容易。grid绘图系统提供了绘制原语，但没有用于生成统计图形的工具。</p></li>
+<li><p>由Deepayan Sarkar开发的<code>lattice</code>软件包，<a href="mailto:%E4%BD%BF%E7%94%A8%E7%BD%91%E6%A0%BC%E5%9B%BE%E5%BD%A2%E6%9D%A5%E5%AE%9E%E7%8E%B0@cleveland" class="email">使用网格图形来实现@cleveland</a>:1993的格子图形系统，与base绘图系统相比有了相当大的改进。您可以很容易地生成图形，一些绘图细节(例如，图例)会被自动处理。然而，lattice绘图系统缺乏标准的模式，这使得它很难扩展。<a href="mailto:lattice%E7%BB%98%E5%9B%BE%E7%B3%BB%E7%BB%9F%E5%9C%A8@sarkar" class="email">lattice绘图系统在@sarkar</a>:2008中得到了详细的介绍。</p></li>
+<li><p>始于2005年的ggplot2试图纳入base绘图系统和lattice绘图系统的优点，并使用一个强大的底层模型对它们进行改进，该模型支持基于上面概述的原则生成任何类型的统计图。ggplot2坚实的底层模型使得用紧凑的语法描述广泛的图形变得容易，而独立的组件使扩展变得容易。与lattice一样，ggplot2使用grid来绘制图形，这意味着您可以对情节的外观进行非常底层次的控制。</p></li>
+<li><p><a href="http://www.htmlwidgets.org">htmlwidgets</a>提供了一个通用的框架从R访问web可视化工具。建立在htnlwidget之上的包包括：leaflet(<a href="https://rstudio.github.io/leaflet/" class="uri">https://rstudio.github.io/leaflet/</a> 地图)、dygraph(<a href="http://rstudio.github.io/dygraphs/" class="uri">http://rstudio.github.io/dygraphs/</a> 时间序列)和networkD3(<a href="http://christophergandrud.github.io/networkD3/" class="uri">http://christophergandrud.github.io/networkD3/</a> 网络)。</p></li>
+<li><p><a href="https://plotly-r.com">plotly</a>是一个流行的带有R接口的javascript可视化工具包。如果您想为HTML文档制作交互式图形，它是一个很棒的工具，甚至还附带了一个<code>ggplotly()</code>函数，可以将许多ggplot2图形转换为它们的交互式对等图形。</p></li>
+</ul>
+<p>许多其他的R包，如vcd<span class="citation">,<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-meyer:2006" role="doc-biblioref"&gt;David Meyer, Achim Zeileis, and Kurt Hornik, &lt;span&gt;“The Strucplot Framework: Visualizing Multi-Way Contingency Tables with Vcd,”&lt;/span&gt; &lt;em&gt;Journal of Statistical Software&lt;/em&gt; 17, no. 3 (2006): 1–48, &lt;/a&gt;&lt;a href="http://www.jstatsoft.org/v17/i03/" role="doc-biblioref"&gt;http://www.jstatsoft.org/v17/i03/&lt;/a&gt;.&lt;/p&gt;'><sup>9</sup></a></span> plotrix<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-plotrix" role="doc-biblioref"&gt;Jim Lemon et al., &lt;em&gt;Plotrix: Various Plotting Functions&lt;/em&gt;, 2008&lt;/a&gt;.&lt;/p&gt;'><sup>10</sup></a></span>和gplots<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="introduction.html#ref-gplots" role="doc-biblioref"&gt;Gregory Warnes, &lt;em&gt;Gplots: Various r Programming Tools for Plotting Data&lt;/em&gt;, 2007&lt;/a&gt;.&lt;/p&gt;'><sup>11</sup></a></span>实现了专业绘图，但没有其他的提供一个生成统计图形的框架。我们可以在<a href="http://cran.r-project.org/web/views/Graphics.html">graphics task</a>的列表中找到一个系统包含所有在其他包中存在的绘图工具列表。</p>
+</div>
+<div id="关于本书" class="section level2" number="1.4">
+<h2>
+<span class="header-section-number">1.4</span> 关于本书<a class="anchor" aria-label="anchor" href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E4%B9%A6"><i class="fas fa-link"></i></a>
+</h2>
+<p>第一个章节(第<a href="#getting-started"><strong>??</strong></a>章)，描述了如何快速开始使用ggplot2制作有用的图形。本章介绍几个重要的ggplot2概念:geoms、aesthetic mappings和facet。</p>
+<p>第<a href="#individual-geoms"><strong>??</strong></a>章到第<a href="#arranging-plots"><strong>??</strong></a>章探索如何使用基础的工具箱来解决你在实践中可能遇到的各种各样的可视化问题。</p>
+<p>第<a href="#scale-position"><strong>??</strong></a>章到第<a href="#scale-other"><strong>??</strong></a>章向您展示如何控制最重要的比例，允许您调整轴和图例的细节。</p>
+<p>第<a href="#mastery"><strong>??</strong></a>章描述了作为ggplot2基础的图层语法。第<a href="#layers"><strong>??</strong></a>章阐述了该理论，演示了如何在你的情节中添加额外的图层，对其中使用的geom和stat进行完全控制。</p>
+<p>理解scale是如何运作的对于微调属性至关重要。定制的scale可以很好地控制情节的外观，帮助支持你所讲的故事。第<a href="#scale-position"><strong>??</strong></a>章，第<a href="#scale-colour"><strong>??</strong></a>章和第<a href="#scale-other"><strong>??</strong></a>章将向你展示有哪些scale是可用的，如何调整它们的参数，以及如何控制轴和图例的外观。</p>
+<p>坐标系统和分面控制图形元素的位置将在第<a href="#position"><strong>??</strong></a>章中描述。分面是一个非常强大的图形工具，它允许您快速比较数据的不同子集。坐标系统不太常用，但对于某些类型的数据来说非常重要。</p>
+<p>为了完善你的故事情节以便出版，你需要学习第<a href="#polishing"><strong>??</strong></a>章中描述的工具。在那里，您将了解如何控制ggplot2的主题化系统，以及如何将图保存到电脑中。</p>
+</div>
+<div id="prerequisites" class="section level2" number="1.5">
+<h2>
+<span class="header-section-number">1.5</span> 先决条件<a class="anchor" aria-label="anchor" href="#prerequisites"><i class="fas fa-link"></i></a>
+</h2>
+<p></p>
+<p>在我们继续之前，需要确保你有这本书需要的所有软件:</p>
+<ul>
+<li><p><strong>R</strong>：如果你没有安装R，你可能读错了书;我假定在本书中对R有基本的了解。如果你想学习如何使用R，我推荐<a href="(https://r4ds.had.co.nz/)">《R for Data Science》</a>，它旨在让你快速简单的使用R。</p></li>
+<li><p><strong>RStudio</strong>：RStudio是一个针对R的免费开源集成开发环境(IDE)。虽然你可以在任何R环境(包括R GUI和ESS)下编写和使用R代码，但是RStudio有一些很好的特性专门用于编写和调试你的代码。我们建议您尝试一下，但并不要求ggplot2或本书能够成功。您可以从下面下载RStudio安装程序https://www.rstudio.com/products/rstudio/download</p></li>
+<li>
+<p><strong>R packages</strong>：这本书使用了一堆R包。你可以通过运行以下命令一次性安装它们:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>
+  <span class="st">"directlabels"</span>, <span class="st">"dplyr"</span>, <span class="st">"gameofthrones"</span>, <span class="st">"ggforce"</span>, <span class="st">"gghighlight"</span>, 
+  <span class="st">"ggnewscale"</span>, <span class="st">"ggplot2"</span>, <span class="st">"ggraph"</span>, <span class="st">"ggrepel"</span>, <span class="st">"ggtext"</span>, <span class="st">"ggthemes"</span>, 
+  <span class="st">"hexbin"</span>, <span class="st">"mapproj"</span>, <span class="st">"maps"</span>, <span class="st">"munsell"</span>, <span class="st">"ozmaps"</span>, <span class="st">"paletteer"</span>, 
+  <span class="st">"patchwork"</span>, <span class="st">"rmapshaper"</span>, <span class="st">"scico"</span>, <span class="st">"seriation"</span>, <span class="st">"sf"</span>, <span class="st">"stars"</span>, 
+  <span class="st">"tidygraph"</span>, <span class="st">"tidyr"</span>, <span class="st">"wesanderson"</span> 
+<span class="op">)</span><span class="op">)</span></code></pre></div>
+</li>
+</ul>
+</div>
+<div id="other-resources" class="section level2" number="1.6">
+<h2>
+<span class="header-section-number">1.6</span> 其他资源<a class="anchor" aria-label="anchor" href="#other-resources"><i class="fas fa-link"></i></a>
+</h2>
+<p>这本书将教你ggplot2语法的元素以及它们如何组合在一起，但是它并没有完整地记录每个函数的细节。随着ggplot2的使用变得更加复杂和多样化，您将需要额外的文档。</p>
+<p>关于ggplot2函数及其参数的具体细节，最好的参考资料总是内置文档。可以在线访问https://ggplot2.tidyverse.org/reference/index.html ，也可以使用通常的帮助语法在R中访问。在线文档的优点是，您可以看到所有的示例图，并更容易地在主题之间导航。</p>
+<p>如果您经常使用ggplot2，那么注册ggplot2邮件列表http://groups.google.com/group/ggplot2是一个好主意。该列表的流量相对较低，并且对新用户非常友好。另一个有用的资源是<a href="http://stackoverflow.com">stackoverflow</a>。stackoverflow上有一个活跃的ggplot2社区，许多常见的问题已经被问出来并得到了回答。在这两种情况下，如果您创建一个最小的可重复示例，就更有可能获得帮助。Jenny Bryan的reprex包提供了一种方便的方法来实现这一点，并且还提供了创建一个好例子的建议。您提供的信息越多，社区就越容易帮助您。</p>
+<p>ggplot2中的函数数量可能太多了，但是RStudio提供了一些很棒的备忘单，可以在http://www.rstudio.com/resources/cheatsheets/上提醒您。</p>
+<p>最后，该书的完整源代码可以从https://github.com/hadley/ggplot2-book 在线获得。这包含了这本书的完整文本，以及重建所有情节所需的所有代码和数据。</p>
+</div>
+<div id="colophon" class="section level2" number="1.7">
+<h2>
+<span class="header-section-number">1.7</span> Colophon<a class="anchor" aria-label="anchor" href="#colophon"><i class="fas fa-link"></i></a>
+</h2>
+<p>这本书使用<a href="http://bookdown.org/">bookdown</a>在<a href="http://www.rstudio.com/ide/">RStudio</a>上进行编辑。<a href="http://ggplot2-book.org/">网站</a>托管在<a href="http://netlify.com/">netlify</a>上，并在<a href="https://github.com/features/actions">Github Actions</a>每次提交后自动更新。 完整的资源可从<a href="https://github.com/hadley/ggplot2-book">GitHub</a>获得。</p>
+<p>这本书使用R version 4.0.4 (2021-02-15)和以下R包进行构建：</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">package</th>
+<th align="left">version</th>
+<th align="left">source</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">directlabels</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">dplyr</td>
+<td align="left">1.0.5</td>
+<td align="left">CRAN (R 4.0.4)</td>
+</tr>
+<tr class="odd">
+<td align="left">gameofthrones</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">ggforce</td>
+<td align="left">0.3.3</td>
+<td align="left">CRAN (R 4.0.4)</td>
+</tr>
+<tr class="odd">
+<td align="left">gghighlight</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">ggnewscale</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">ggplot2</td>
+<td align="left">3.3.3</td>
+<td align="left">CRAN (R 4.0.3)</td>
+</tr>
+<tr class="even">
+<td align="left">ggraph</td>
+<td align="left">2.0.5</td>
+<td align="left">CRAN (R 4.0.4)</td>
+</tr>
+<tr class="odd">
+<td align="left">ggrepel</td>
+<td align="left">0.9.1</td>
+<td align="left">CRAN (R 4.0.4)</td>
+</tr>
+<tr class="even">
+<td align="left">ggtext</td>
+<td align="left">0.1.1</td>
+<td align="left">CRAN (R 4.0.4)</td>
+</tr>
+<tr class="odd">
+<td align="left">ggthemes</td>
+<td align="left">4.2.4</td>
+<td align="left">CRAN (R 4.0.4)</td>
+</tr>
+<tr class="even">
+<td align="left">hexbin</td>
+<td align="left">1.28.2</td>
+<td align="left">CRAN (R 4.0.4)</td>
+</tr>
+<tr class="odd">
+<td align="left">mapproj</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">maps</td>
+<td align="left">3.3.0</td>
+<td align="left">CRAN (R 4.0.4)</td>
+</tr>
+<tr class="odd">
+<td align="left">munsell</td>
+<td align="left">0.5.0</td>
+<td align="left">CRAN (R 4.0.2)</td>
+</tr>
+<tr class="even">
+<td align="left">ozmaps</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">paletteer</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">patchwork</td>
+<td align="left">1.1.1</td>
+<td align="left">CRAN (R 4.0.3)</td>
+</tr>
+<tr class="odd">
+<td align="left">rmapshaper</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">scico</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">seriation</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">sf</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">stars</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">tidygraph</td>
+<td align="left">1.2.0</td>
+<td align="left">CRAN (R 4.0.2)</td>
+</tr>
+<tr class="odd">
+<td align="left">tidyr</td>
+<td align="left">1.1.3</td>
+<td align="left">CRAN (R 4.0.4)</td>
+</tr>
+<tr class="even">
+<td align="left">wesanderson</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table></div>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-chambers:1983" class="csl-entry">
+Chambers, John, William Cleveland, Beat Kleiner, and Paul Tukey. <em>Graphical Methods for Data Analysis</em>. Wadsworth, 1983.
+</div>
+<div id="ref-cleveland:1993" class="csl-entry">
+Cleveland, William. <em>Visualizing Data</em>. Hobart Press, 1993.
+</div>
+<div id="ref-plotrix" class="csl-entry">
+Lemon, Jim, Ben Bolker, Sander Oom, Eduardo Klein, Barry Rowlingson, Hadley Wickham, Anupam Tyagi, et al. <em>Plotrix: Various Plotting Functions</em>, 2008.
+</div>
+<div id="ref-meyer:2006" class="csl-entry">
+Meyer, David, Achim Zeileis, and Kurt Hornik. <span>“The Strucplot Framework: Visualizing Multi-Way Contingency Tables with Vcd.”</span> <em>Journal of Statistical Software</em> 17, no. 3 (2006): 1–48. <a href="http://www.jstatsoft.org/v17/i03/">http://www.jstatsoft.org/v17/i03/</a>.
+</div>
+<div id="ref-murrell:1998" class="csl-entry">
+Murrell, Paul. <span>“Investigations in Graphical Statistics.”</span> PhD thesis, The University of Auckland, 1998.
+</div>
+<div id="ref-tufte:1990" class="csl-entry">
+Tufte, Edward R. <em>Envisioning Information</em>. Graphics Press, 1990.
+</div>
+<div id="ref-tufte:2001" class="csl-entry">
+———. <em>The Visual Display of Quantitative Information</em>. Second. Graphics Press, 2001.
+</div>
+<div id="ref-tufte:1997" class="csl-entry">
+———. <em>Visual Explanations</em>. Graphics Press, 1997.
+</div>
+<div id="ref-gplots" class="csl-entry">
+Warnes, Gregory. <em>Gplots: Various r Programming Tools for Plotting Data</em>, 2007.
+</div>
+<div id="ref-wickham:2007d" class="csl-entry">
+Wickham, Hadley. <span>“A Layered Grammar of Graphics.”</span> <em>Journal of Computational and Graphical Statistics</em>, 2009.
+</div>
+<div id="ref-wickham:2008b" class="csl-entry">
+Wickham, Hadley, Michael Lawrence, Duncan Temple Lang, and Deborah F Swayne. <span>“An Introduction to Rggobi.”</span> <em>R-News</em> 8, no. 2 (2008): 3–7. <a href="http://CRAN.R-project.org/doc/Rnews/Rnews_2008-2.pdf">http://CRAN.R-project.org/doc/Rnews/Rnews_2008-2.pdf</a>.
+</div>
+<div id="ref-wilkinson:2006" class="csl-entry">
+Wilkinson, Leland. <em>The Grammar of Graphics</em>. 2nd ed. Statistics and Computing. Springer, 2005.
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="%E7%AC%AC%E4%BA%8C%E7%89%88%E5%89%8D%E8%A8%80.html">第二版前言</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introduction"><span class="header-section-number">1</span> 引入</a></li>
+<li><a class="nav-link" href="#%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0-ggplot2"><span class="header-section-number">1.1</span> 欢迎来到 ggplot2</a></li>
+<li><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%BD%A2%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="header-section-number">1.2</span> 什么是图形的语法？</a></li>
+<li><a class="nav-link" href="#ggplot2%E5%A6%82%E4%BD%95%E9%80%82%E5%BA%94%E5%85%B6%E4%BB%96r%E7%BB%98%E5%9B%BE%E7%B3%BB%E7%BB%9F"><span class="header-section-number">1.3</span> ggplot2如何适应其他R绘图系统？</a></li>
+<li><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E4%B9%A6"><span class="header-section-number">1.4</span> 关于本书</a></li>
+<li><a class="nav-link" href="#prerequisites"><span class="header-section-number">1.5</span> 先决条件</a></li>
+<li><a class="nav-link" href="#other-resources"><span class="header-section-number">1.6</span> 其他资源</a></li>
+<li><a class="nav-link" href="#colophon"><span class="header-section-number">1.7</span> Colophon</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/Moonerss/ggplot2-edition3/blob/master/introduction.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/Moonerss/ggplot2-edition3/edit/master/introduction.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>ggplot2:数据分析与图形艺术</strong>" was written by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen, Jeason Zhao(译). It was last built on 更新时间2021-03-21.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
